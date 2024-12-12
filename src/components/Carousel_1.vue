@@ -1,6 +1,8 @@
 <template>
+<!--  轮播图组件-->
   <a-carousel autoplay :dots="false">
     <div>
+<!--      栅格布局-->
       <a-row>
         <a-col :span="9">
           <div class="OIP-C"></div>
@@ -64,7 +66,7 @@ div{
   border-radius: 10px;
 }
 
-
+/*设置图片和盒子之间的间隔*/
 .OIP-C{
   background: url("../assets/Animation/sakura/OIP-C.jpg") no-repeat center center /cover;
   margin-right: 10px;

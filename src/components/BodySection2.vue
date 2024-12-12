@@ -28,7 +28,6 @@ import Carousel_2 from "./Carousel_2.vue";
         </a-col>
       </a-row>
     </div>
-
     <Carousel_2 />
   </div>
 </div>
@@ -49,8 +48,10 @@ import Carousel_2 from "./Carousel_2.vue";
   position: relative;
   left: 50%; /* 相对于视口水平居中 */
   transform: translate(-50%, 0%); /* 相对于自身位置的调整，使其居中 */
+  /*设置最大宽度和100%是为了在视窗缩放的时候避免格子太大影响观感，同时也是为了与上方元素对齐保证美观*/
   max-width: 1420px;
   width: 100%;
+
   padding-left: 40px;
   font-size: 60px;
   color: white;
@@ -62,6 +63,7 @@ import Carousel_2 from "./Carousel_2.vue";
   position: relative;
   left: 50%; /* 相对于视口水平居中 */
   transform: translate(-50%, 0%); /* 相对于自身位置的调整，使其居中 */
+  /*通.first*/
   max-width: 1420px;
   width: 100%;
   padding-left: 40px;
@@ -76,9 +78,5 @@ import Carousel_2 from "./Carousel_2.vue";
   position: relative;
   top:50%;
 }
-@media (max-width: 1420px) {
-  .first {
-    max-width: unset;
-  }
-}
+
 </style>

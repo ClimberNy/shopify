@@ -3,6 +3,7 @@
 </script>
 
 <template>
+<!--  栅格布局-->
   <a-row>
     <a-col :span="8">
       <div style="height: 468px" class="card1_hover">
@@ -63,6 +64,8 @@
   transition: background .5s;
 }
 
+
+/*设置hover后改变图片,和shopify官网一致*/
 .card1_hover:hover .card1{
   background: url("../assets/Section2/ac93cea21424238e2231f2e0009da62e.webp") no-repeat center center /cover;
 }

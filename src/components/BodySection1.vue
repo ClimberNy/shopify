@@ -3,7 +3,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 
-
+//设置变化的字母
 const status = ref('big thing'); // 初始值
 const values = ['one to watch', 'category creator', 'unicorn startup', 'household name', 'global empire', 'solo flier', 'store they line','big thing']; // 三种值的数组
 let currentIndex = 0; // 当前值的索引
@@ -12,9 +12,9 @@ const updateStatus = () => {
   status.value = values[currentIndex];
   currentIndex = (currentIndex + 1) % values.length; // 循环到下一个值
 };
-// 组件挂载时设置定时器
+// 组件挂载时设置定时器，3.5秒进行一次状态更新
 onMounted(() => {
-  const intervalId = setInterval(updateStatus, 3500); // 每秒更新一次状态
+  const intervalId = setInterval(updateStatus, 3500);
   // 组件卸载时清除定时器
   onUnmounted(() => {
     clearInterval(intervalId);
@@ -25,6 +25,7 @@ onMounted(() => {
 <template>
 
   <div id="global_body1">
+<!--    视频背景-->
     <video autoplay loop muted playsinline>
       <source src="../assets/background.mp4" type="video/mp4" />
     </video>
@@ -36,6 +37,7 @@ onMounted(() => {
       <div class="test_2">
         Dream big, build fast, and<br>grow far on Shopify.
       </div>
+<!--      三个按钮采用栅格布局实现自适应-->
       <div class="part_3">
         <a-row>
           <a-col flex="100px">
@@ -56,31 +58,32 @@ onMounted(() => {
 
     </div>
   </div>
-<!--  网络原因-->
-<!--  <video aria-label="Shopify 商家开展销售、管理业务和庆祝成功的视频素材" autoplay="" class="absolute size-full object-cover" loop="" playsinline="" src="blob:https://www.shopify.com/0b1e875e-c87a-4127-bcbb-65933797c35e"></video>-->
 </template>
 
 <style scoped>
+/*不懂为啥没生效，换一种方式吧
 @media (max-width: 1420px) {
   video {
     min-width: unset;
   }
-}
+}*/
 #global_body1 {
   height:700px;
   width: 100vw;
 }
+/* */
 video {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /*放置在最底层作为背景图片*/
   z-index: -100;
+  /*让背景始终填满视图，且为了防止上下边填不满，经过计算设置min—width，防止伸缩过程中高度太小难以覆盖期望区域*/
   width: 100vw;
   min-width: 1420px;
-  max-width: 6051px;
-  overflow: hidden;
 }
+
 #global_body1 .all_text{
   position: relative;
   top:20%;

@@ -9,7 +9,7 @@ import BodySection2 from "../components/BodySection2.vue";
     <a-layout-header class="header">
       <MyMenu />
     </a-layout-header>
-    <a-layout-content>
+    <a-layout-content class="body">
       <div>
         <BodySection1 class="content"/>
         <BodySection2 />
@@ -28,8 +28,10 @@ import BodySection2 from "../components/BodySection2.vue";
   z-index :1;
   color: unset;
   background: unset;
-  width: 100%;
+  /* 将宽度设置视窗，且设置最大宽度，保证页面大小变化时自适应 */
+  width: 100vw;
   max-width: 1420px;
+
   left: 50%; /* 相对于视口水平居中 */
   transform: translate(-50%, 0%); /* 相对于自身位置的调整，使其居中 */
 
@@ -39,11 +41,9 @@ import BodySection2 from "../components/BodySection2.vue";
   position: relative;
   left: 50%; /* 相对于视口水平居中 */
   transform: translate(-50%, 0%); /* 相对于自身位置的调整，使其居中 */
+  /* 将宽度设置视窗，且设置最大宽度，保证页面大小变化时自适应 */
   max-width: 1420px;
-  width: 100%;
+  width: 100vw;
 }
 
-body.scrolled .menu {
-  background-color: #000; /* 滚动后的背景色 */
-}
 </style>

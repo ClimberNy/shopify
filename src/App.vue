@@ -28,12 +28,17 @@ onUnmounted(() => {
 
 
 <template>
+  <!-- 设置一个黑框，保证在页面下移的时候能够调节透明背景色为黑色 -->
   <div class="scroll" :style="{ backgroundColor: backgroundColor }"></div>
+  <!-- 整体布局组件 header body -->
   <LayOut />
 </template>
 
 <style scoped>
+
+
 .scroll{
+  /* 将背景色可变的黑框定位在Menu下方 */
   position: fixed;
   width: 100%;
   height: 64px;

@@ -1,6 +1,6 @@
 <template>
-
   <div id="global_menu">
+<!--    栅格布局实现自适应-->
     <a-row :wrap="false">
       <a-col flex="100px">
         <div class="title_bar">
@@ -154,7 +154,7 @@ const items = ref([
 </script>
 
 <style scoped>
-
+/*设置logo整体位置*/
 .title_bar{
   display: flex;
   align-items: center;
@@ -165,6 +165,7 @@ const items = ref([
 .menu{
   color: white;
 }
+/*设置logo内部几个部分协调美观*/
 .logo{
   height: 28px;
   margin-right: 10px;
